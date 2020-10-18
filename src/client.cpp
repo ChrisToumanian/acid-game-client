@@ -68,20 +68,40 @@ void Client::initialize(std::string address, int port)
 	}
 }
 
+void Client::listen(void (*callback)(std::string))
+{
+	running = true;
+
+	while (running)
+	{
+		memset(buffer, 0, 1024);
+		int result = recv(used_socket, buffer, 1024, 0);
+		if (result != SOCKET_ERROR)
+		{
+			std::string message = buffer;
+			message.erase(message.find_last_not_of(" \n\r\t") + 1);
+			callback(message);
+		}
+	}
+}
+
 std::string Client::send_message(std::string message)
 {
-	memset(buffer, 0, 1024);
 	message += '\r\n';
+	//memset(buffer, 0, 1024);
 
 	// send message
 	send(used_socket, message.c_str(), (int)strlen(message.c_str()), 0);
 
 	// receive message
-	int result = recv(used_socket, buffer, 1024, 0);
-	if (result != SOCKET_ERROR)
+	if (wait_for_response)
 	{
-		return buffer;
+		int result = recv(used_socket, buffer, 1024, 0);
+		if (result != SOCKET_ERROR)
+		{
+			return buffer;
+		}
 	}
 
-	return "Sent from client.";
+	return "";
 }
