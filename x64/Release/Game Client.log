@@ -1,0 +1,17 @@
+﻿  client.cpp
+D:\Projects\Fallen Star RPG\Game Client\src\client.cpp(16,22): warning C4244: '=': conversion from 'SOCKET' to 'int', possible loss of data
+D:\Projects\Fallen Star RPG\Game Client\src\client.cpp(45,23): warning C4244: '=': conversion from 'SOCKET' to 'int', possible loss of data
+D:\Projects\Fallen Star RPG\Game Client\src\client.cpp(56,18): warning C4309: '=': truncation of constant value
+D:\Projects\Fallen Star RPG\Game Client\src\client.cpp(74,19): warning C4305: 'argument': truncation from 'int' to '_Elem'
+D:\Projects\Fallen Star RPG\Game Client\src\client.cpp(74,19): warning C4305:         with
+D:\Projects\Fallen Star RPG\Game Client\src\client.cpp(74,19): warning C4305:         [
+D:\Projects\Fallen Star RPG\Game Client\src\client.cpp(74,19): warning C4305:             _Elem=char
+D:\Projects\Fallen Star RPG\Game Client\src\client.cpp(74,19): warning C4305:         ]
+  game.cpp
+D:\Projects\Fallen Star RPG\Game Client\src\client.cpp(74,13): warning C4309: 'argument': truncation of constant value
+  Generating code
+  5 of 103 functions ( 4.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Game Client.vcxproj -> D:\Projects\Fallen Star RPG\Game Client\x64\Release\Game Client.exe
